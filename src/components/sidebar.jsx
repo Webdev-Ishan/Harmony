@@ -4,7 +4,7 @@ const sidebar = () => {
   return (
     <div className='w-[25%] h-full p-2 flex-col gap-2 text-white hidden lg:flex'>
 
-        <div className=' border-1 border-white bg-blue-700 h-[15%] rounded flex flex-col justify-around'>
+        <div className=' border-1 border-white bg-gradient-to-r from-violet-700 to-blue-700 h-[15%] rounded flex flex-col justify-around'>
 
             <div className='flex items-center gap-3 pl-8 cursor-pointer'>
 
@@ -25,7 +25,7 @@ const sidebar = () => {
         </div>
       
 
-<div className='border-1 border-white bg-blue-600 h-[100%] rounded'>
+<div className='border-1 border-white bg-gradient-to-r from-violet-700 to-blue-700 h-[100%] rounded'>
     <div className='p-4 flex items-center justify-between'>
         <div className='fle items-center gap-3'>
             <img className='w-8' src={assets.stack_icon} alt="" />
