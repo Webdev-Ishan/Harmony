@@ -9,14 +9,14 @@ const sidebar = () => {
             <div className='flex items-center gap-3 pl-8 cursor-pointer'>
 
 <img className='w-6' src={assets.home_icon} alt="loading" />
-<p className='font-bold hover:text-slate-700 duration-300'>Home</p>
+<p className='font-bold hover:text-black duration-300'>Home</p>
             </div>
 
 
             <div className='flex items-center gap-3 pl-8 cursor-pointer'>
 
 <img className='w-6' src={assets.search_icon} alt="loading" />
-<p className='font-bold hover:text-slate-700 duration-300'>Search</p>
+<p className='font-bold hover:text-black duration-300'>Search</p>
             </div>
 
 
