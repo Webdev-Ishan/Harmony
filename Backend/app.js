@@ -1,27 +1,25 @@
-import express from 'express'
-import cors from 'cors'
-import 'dotenv/config'
-import songRouter from './Src/routes/songRoute.js'
-import connectToDb from './Src/config/mongodb.js'
-import connectCloudinary from './Src/config/cloudnary.js'
+import express from "express";
+import cors from "cors";
+import "dotenv/config";
+import songRouter from "./Src/routes/songRoute.js";
+import connectToDb from "./Src/config/mongodb.js";
+import connectCloudinary from "./Src/config/cloudnary.js";
 
-const app = express()
-const port = process.env.PORT || 4000
+const app = express();
+const port = process.env.PORT || 4000;
 
-
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 connectToDb();
 connectCloudinary();
 
-app.use("/api/song",songRouter)
+app.use("/api/song", songRouter);
 
-app.get("/",(req,res)=>{
-    res.send("Running")
-})
+app.get("/", (req, res) => {
+  res.send("Running");
+});
 
-
-app.listen(port,()=>{
-    console.log(`listenening on port ${port}`)
-})
+app.listen(port, () => {
+  console.log(`listenening on port ${port}`);
+});

@@ -29,18 +29,22 @@ const Addsong = async (req, res) => {
       duration,
     };
 
-    const song = new songModel( songdata );
+    const song = new songModel(songdata);
     await song.save();
 
     res.json({ success: true, message: "Song Added" });
-
-  }
-   catch (error) {
-console.log(error)
+  } catch (error) {
+    console.log(error);
     res.json({ success: false });
   }
 };
 
-const Listsong = (req, res) => {};
+const Listsong = (req, res) => {
+
+
+
+
+    
+};
 
 export { Addsong, Listsong };
