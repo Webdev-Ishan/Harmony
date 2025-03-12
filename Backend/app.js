@@ -4,6 +4,7 @@ import "dotenv/config";
 import songRouter from "./Src/routes/songRoute.js";
 import connectToDb from "./Src/config/mongodb.js";
 import connectCloudinary from "./Src/config/cloudnary.js";
+import albumrouter from "./Src/routes/albumRoutes.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -15,6 +16,7 @@ connectToDb();
 connectCloudinary();
 
 app.use("/api/song", songRouter);
+app.use("/api/album", albumrouter);
 
 app.get("/", (req, res) => {
   res.send("Running");
