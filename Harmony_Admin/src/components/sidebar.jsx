@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const sidebar = () => {
   return (
-    <div className="bg-gradient-to-r from-violet-700 to-blue-700 border-r-2 border-black min-h-screen pl-[5vw]">
+    <div className="bg-gradient-to-r from-violet-700 to-blue-700 border-2 border-white min-h-screen pl-[5vw]">
       <h1
         style={{ WebkitTextStroke: "1px black" }}
         className="text-white m-5 text-4xl  font-bold"

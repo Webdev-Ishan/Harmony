@@ -17,7 +17,7 @@ const App = () => {
       <ToastContainer/>
 
 <Sidebar/>
-      <div className='flex-1 h-screen overflow-y-scroll bg-white'>
+      <div className='flex-1 h-screen overflow-y-scroll bg-white border-2 border-black'>
         <Navbar/>
 <div className='pt-8 pl-5 sm:pt-15 sm:pl-12'>
   <Routes>

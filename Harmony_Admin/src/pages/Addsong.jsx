@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { assets } from "../assets/admin-assets/assets";
-import axios from 'axios'
-import {toast} from 'react-toastify'
+import axios from "axios";
+import { toast } from "react-toastify";
 import { url } from "../App";
 const Addsong = () => {
   const [image, setImage] = useState(null);
@@ -12,16 +12,11 @@ const Addsong = () => {
   const [loading, setLoading] = useState(false);
   const [albumData, setAlbumData] = useState([]);
 
- 
-
   const submitHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-   
-
     try {
-    
       const formData = new FormData();
 
       formData.append("name", name);
@@ -30,25 +25,23 @@ const Addsong = () => {
       formData.append("audio", song);
       formData.append("image", image);
 
-      const response = await axios.post(`${url}/api/song/add`,formData);
+      const response = await axios.post(`${url}/api/song/add`, formData);
 
       if (response.data.success) {
         toast.success("Song Added");
-        setName("")
-        setDesc("")
-        setImage(false)
-        setSong(false)
-        setAlbum("none")
-
+        setName("");
+        setDesc("");
+        setImage(false);
+        setSong(false);
+        setAlbum("none");
       } else {
         toast.error("Something went wrong");
       }
-
     } catch (error) {
       toast.error("Error occurred");
-      console.log(error.message)
-    } 
-    setLoading(false)
+      console.log(error.message);
+    }
+    setLoading(false);
   };
 
   return loading ? (
@@ -56,7 +49,10 @@ const Addsong = () => {
       <p>Loading...</p>
     </div>
   ) : (
-    <form onSubmit={submitHandler} className="flex flex-col items-start gap-8 text-black">
+    <form
+      onSubmit={submitHandler}
+      className="flex flex-col items-start gap-8 text-black"
+    >
       <div className="flex flex-col gap-4">
         <p>Upload Song</p>
         <input
@@ -67,7 +63,11 @@ const Addsong = () => {
           hidden
         />
         <label htmlFor="song">
-          <img src={assets.upload_song} alt="Upload Song" className="w-24 cursor-pointer" />
+          <img
+            src={assets.upload_song}
+            alt="Upload Song"
+            className="w-24 cursor-pointer"
+          />
         </label>
       </div>
 
@@ -81,7 +81,11 @@ const Addsong = () => {
           hidden
         />
         <label htmlFor="image">
-          <img src={assets.upload_area} alt="Upload Image" className="w-24 cursor-pointer" />
+          <img
+            src={assets.upload_area}
+            alt="Upload Image"
+            className="w-24 cursor-pointer"
+          />
         </label>
       </div>
 

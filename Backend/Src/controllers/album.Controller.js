@@ -22,10 +22,10 @@ const Addalbum = async (req, res) => {
         const album = albumModel(albumdata)
         await album.save()
 
-        res.json({sucess:true,message:"Created the album"});
+        res.json({success:true,message:"Created the album"});
 
     } catch (error) {
-        res.json({sucess:false})
+        res.json({success:false})
     }
 };
 
@@ -33,10 +33,10 @@ const Listalbum = async (req, res) => {
     try {
         
 const allAlbum = await albumModel.find({})
-res.json({sucess:true,allAlbum})
+res.json({success:true,allAlbum})
 
     } catch (error) {
-        res.json({sucess:false})
+        res.json({success:false})
     }
 };
 
@@ -45,9 +45,9 @@ const removelbum = async (req, res) => {
         
 
         await albumModel.findByIdAndDelete(req.body.id)
-        res.json({sucess:true,message:"Delted"})
+        res.json({success:true,message:"Delted"})
     } catch (error) {
-        res.json({sucess:false})
+        res.json({success:false})
     }
 };
 
