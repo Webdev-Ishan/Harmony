@@ -65,7 +65,7 @@ const Listsong = () => {
                   />
                 </td>
                 <td className="border px-4 py-2 text-white">{song.name}</td>
-                <td className="border px-4 py-2 text-white">{song.album}</td>
+                <td className="border px-4 py-2 text-white">   {song.album}</td>
                 <td className="border px-4 py-2 text-white">{song.duration}</td>
                 <td className="border px-4 py-2 text-white">
                   <button

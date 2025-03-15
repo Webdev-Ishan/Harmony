@@ -23,7 +23,7 @@ const Addsong = async (req, res) => {
     const songdata = {
       name,
       desc,
-      album,
+      album:album,
       image: imageUpload.secure_url,
       audio: audioUpload.secure_url,
       duration,

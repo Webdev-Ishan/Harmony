@@ -35,7 +35,7 @@ try {
 
 
       if (response.data.success) {
-        toast.success("Song Added");
+        toast.success("Album Added");
         setName("");
         setDesc("");
         setImage(false);

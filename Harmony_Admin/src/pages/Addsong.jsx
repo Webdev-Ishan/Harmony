@@ -44,6 +44,37 @@ const Addsong = () => {
     setLoading(false);
   };
 
+
+const loadAlbumdata = async ()=>{
+
+  try {
+
+    const response = await axios.get(`${url}/api/album/list`);
+
+    if(response.data.success){
+
+console.log(response)
+
+      setAlbumData(response.data.allAlbum);
+    }
+    else{
+
+      toast.error("Something went wrong")
+    }
+    
+  } catch (error) {
+    
+    toast.error("Error occurred")
+  }
+}
+
+
+useEffect(()=>{
+
+loadAlbumdata();
+
+},[])
+
   return loading ? (
     <div className="flex items-center justify-center h-screen">
       <p>Loading...</p>
@@ -122,10 +153,10 @@ const Addsong = () => {
         >
           <option value="none">None</option>
           {albumData.map((album) => (
-            <option key={album._id} value={album._id}>
+            <option key={album._id} value={album.name}>
               {album.name}
             </option>
-          ))}
+          ))} 
         </select>
       </div>
 
